@@ -1,9 +1,8 @@
-def Hello (input):
-    print( input + "1")
-    print( input + "2")
-    print( input + "3")
+import datetime
 
-Hello("five")
+dt = 1602432000
+dtf = datetime.date.fromtimestamp(dt)
+print(dtf)
 
-if __name__ == "__main__":
-    hello.run(debug=True)
+day = datetime.date.weekday(dtf)
+print(day)
