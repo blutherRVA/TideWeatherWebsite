@@ -1,6 +1,7 @@
 #Starting from scratch using Git in VSCODE
 from flask import Flask, render_template, request, url_for
-import weatherScraper
+import currentWeather
+from dayOf import DayOf
 
 
 app = Flask(__name__)
@@ -13,29 +14,45 @@ lon_piank = '-76.3'
 lat_york = '37.3'
 lon_york = '-76.4'
 
+#days
+day0 = DayOf(0)
+day1 = DayOf(1)
+day2 = DayOf(2) 
+day3 = DayOf(3)
+day4 = DayOf(4)
+day5 = DayOf(5)
+day6 = DayOf(6)
+
 
 @app.route('/')
-def hello_world():
+@app.route('/home')
+def home():
     return render_template('home.html')
 
 @app.route('/james')
 def james():
-    weath = weather_scraper.weath(lat_james, lon_james)
-    wind = int(float(weather_scraper.wind(lat_james, lon_james)) * 2.23) #converting m/s to mph
-    wdir = weatherScraper.wind_dir(lat_james, lon_james)
-    return render_template('james.html', weather=weath, wind=wind, windDir=wdir)
+    weath = currentWeather.getJamesCWeath()
+    temp = currentWeather.getJamesCTemp()
+    wind = currentWeather.getJamesCWind()
+    wdir = currentWeather.getJamesCWindDir()
+    
+    return render_template('james.html', weather=weath, temperature=temp, windSp=wind, windDir=wdir, day0=day0, day1=day1, day2=day2, day3=day3, day4=day4, day5=day5, day6=day6)
 
 @app.route('/piankatank')
-def piank():
-    weath = weather_scraper.weath(lat_piank, lon_piank)
-    wind = int(float(weather_scraper.wind(lat_piank, lon_piank)) * 2.23) #converting m/s to mph
-    wdir = weatherScraper.wind_dir(lat_piank, lon_piank)
-    return render_template('piankatank.html', weather=weath, wind=wind, windDir=wdir)
+def piankatank():
+    weath = currentWeather.getJamesCWeath()
+    temp = currentWeather.getJamesCTemp()
+    wind = currentWeather.getJamesCWind()
+    wdir = currentWeather.getJamesCWindDir()
+    return render_template('piankatank.html', weather=weath, temperature=temp, windSp=wind, windDir=wdir, day0=day0, day1=day1, day2=day2, day3=day3, day4=day4, day5=day5, day6=day6)
 
 @app.route('/york')
 def york():
-    return render_template('york.html')
-
+    weath = currentWeather.getJamesCWeath()
+    temp = currentWeather.getJamesCTemp()
+    wind = currentWeather.getJamesCWind()
+    wdir = currentWeather.getJamesCWindDir()
+    return render_template('york.html', weather=weath, temperature=temp, windSp=wind, windDir=wdir, day0=day0, day1=day1, day2=day2, day3=day3, day4=day4, day5=day5, day6=day6)
 
 
 if __name__ == "__main__":
