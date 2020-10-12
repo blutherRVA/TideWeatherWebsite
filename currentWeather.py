@@ -33,14 +33,22 @@ def getJamesCWindDir():
         value = json.loads(file.read())
         current = value['current']
         windDir = current['wind_deg']
-        if 0 <= windDir < 90:
-            return 'NE'
-        elif 90 <= windDir < 180:
-            return 'SE'
-        elif 180 <= windDir < 270:
-            return 'SW'
-        elif 270 <= windDir < 360:
-            return 'NW'
+        if 0 <= windDir < 45:
+            return 'NNE'
+        elif 45 <= windDir < 90:
+            return 'ENE'
+        elif 90 <= windDir < 135:
+            return 'ESE'
+        elif 135 <= windDir < 180:
+            return 'SSE'
+        elif 180 <= windDir < 225:
+            return 'SSW'
+        elif 225 <= windDir < 270:
+            return 'WSW'    
+        elif 270 <= windDir < 315:
+            return 'WNW'
+        elif 315 <= windDir < 360:
+            return 'NNW'
         else:
             return 'No Wind Data'
         
