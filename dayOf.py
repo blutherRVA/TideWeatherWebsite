@@ -3,7 +3,9 @@ import datetime
 import time
 
 dayToday = datetime.date.today()
-timeC= datetime.datetime()
+now = datetime.datetime.now()
+
+
 
 def DayOf(daysInFuture):
     dayObj = dayToday + datetime.timedelta(days=(daysInFuture))
@@ -26,13 +28,15 @@ def DayOf(daysInFuture):
     else:
         return 'Error'
 
-#def TimeOf(hoursFuture):
-   # timeObj = timeC + datetime.timedelta(hours=hoursFuture)
-    #return timeObj
+def TimeOf(hoursFuture):
+   timeObj = now + datetime.timedelta(hours=hoursFuture)
+   hoursObj = timeObj.strftime("%H")
+   return (hoursObj + ':00')
 
 if __name__ == ("__main__"):
     print(DayOf(1))
-    print(timeC)
+    print(TimeOf(0))
+    print(TimeOf(2))
     
     
 
