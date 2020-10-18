@@ -2,6 +2,9 @@ import time
 import datetime
 
 capeCharlesTimeStamp = 1592057307 #Low Tide morning of 6/13/2020 in Cape Charles Harbor
+jamesTimeStamp = capeCharlesTimeStamp + 27480 #Jmes River Locks 458 minutes behind cape charles
+piankatankTimeStamp = capeCharlesTimeStamp + 3660 # Cherry points tide is 61 minutes behind cape charles
+yorkTimeStamp = capeCharlesTimeStamp - 240  #York River Spit is 4 minutes behind the cape charles
 
 
 def tide_time_keeper(time_stamp):
@@ -13,7 +16,7 @@ def tide_time_keeper(time_stamp):
         slack_time = datetime.timedelta(seconds=nextHigh)
         time_output = time.strptime(str(slack_time), "%H:%M:%S")
         time_print = time.strftime("%H hr %M min", time_output)
-        return "Next High Tide: " + str(time_print)
+        return str(time_print) + " (High)"
 
 
 
@@ -22,7 +25,7 @@ def tide_time_keeper(time_stamp):
         slack_time = datetime.timedelta(seconds=nextLow)
         time_output = time.strptime(str(slack_time), "%H:%M:%S")
         time_print = time.strftime("%H hr %M min", time_output)
-        return "Next Low Tide: " + str(time_print)
+        return str(time_print) + " (Low)"
 
     else:
         return "Calculation Error"
@@ -31,4 +34,6 @@ def tide_time_keeper(time_stamp):
 
 
 if __name__ == ('__main__'):
-    print(time_keeper(capeCharlesTimeStamp))
+    print(tide_time_keeper(jamesTimeStamp))
+
+    
