@@ -4,10 +4,16 @@ import currentWeather
 from dayOf import DayOf, TimeOf
 from hourlyForecast import getHourWeather, getHourTemperature, getHourWind, getHourWindDir
 from dailyForecast import getDailyWeather, getDailyTemperature, getDailyWind, getDailyWindDir
+from tideTimeKeeper import tide_time_keeper
 
 
 app = Flask(__name__)
 
+#Tide Time Stamps
+capeCharlesTimeStamp = 1592057307 #Low Tide morning of 6/13/2020 in Cape Charles Harbor
+jamesTimeStamp = capeCharlesTimeStamp + 27480 #Jmes River Locks 458 minutes behind cape charles
+piankatankTimeStamp = capeCharlesTimeStamp + 3660 # Cherry points tide is 61 minutes behind cape charles
+yorkTimeStamp = capeCharlesTimeStamp - 240  #York River Spit is 4 minutes behind the cape charles
 
 #Hourly forecast
 time2 = TimeOf(2)
@@ -75,13 +81,14 @@ def james():
     dailyF2 = getDailyWind(riverj, 5)
     dailyG1 = getDailyWeather(riverj, 6)
     dailyG2 = getDailyWind(riverj, 6)
+    nextTide = tide_time_keeper(jamesTimeStamp)
     
     return render_template(
         'james.html', weather=weath, temperature=temp, windSp=wind, windDir=wdir, day0=day0, day1=day1, day2=day2, day3=day3, day4=day4, day5=day5, 
         day6=day6, time2=time2, time4=time4, time6=time6, time8=time8, hrlyA1=hrlyA1, hrlyA2=hrlyA2, hrlyA3=hrlyA3, hrlyA4=hrlyA4, hrlyB1=hrlyB1,
         hrlyB2=hrlyB2, hrlyB3=hrlyB3, hrlyB4=hrlyB4, hrlyC1=hrlyC1, hrlyC2=hrlyC2, hrlyC3=hrlyC3, hrlyC4=hrlyC4, hrlyD1=hrlyD1, hrlyD2=hrlyD2, hrlyD3=hrlyD3,
         hrlyD4=hrlyD4, dailyA1=dailyA1, dailyA2=dailyA2, dailyB1=dailyB1, dailyB2=dailyB2, dailyC1=dailyC1, dailyC2=dailyC2, dailyD1=dailyD1,
-        dailyD2=dailyD2, dailyE1=dailyE1, dailyE2=dailyE2, dailyF1=dailyF1, dailyF2=dailyF2, dailyG1= dailyG1, dailyG2=dailyG2
+        dailyD2=dailyD2, dailyE1=dailyE1, dailyE2=dailyE2, dailyF1=dailyF1, dailyF2=dailyF2, dailyG1= dailyG1, dailyG2=dailyG2, nextTide=nextTide
         )
 
 @app.route('/piankatank')
