@@ -138,7 +138,13 @@ def LowTideKeeper(tts):
 
     return lTideDict
 
+def combineLowAndHigh(tts):
+    h = HighTideKeeper(tts)
+    l = LowTideKeeper(tts)
+    newTideDict = h.update(l)
+    print(newTideDict)
 
 if __name__=="__main__":
-    print(HighTideKeeper(piankatankTimeStamp))
-    print(LowTideKeeper(piankatankTimeStamp))
+    #print(HighTideKeeper(piankatankTimeStamp))
+    #print(LowTideKeeper(piankatankTimeStamp))
+    combineLowAndHigh(piankatankTimeStamp)
