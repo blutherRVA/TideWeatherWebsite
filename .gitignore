@@ -1,3 +1,13 @@
 venv
 hello.py
 keys2.py
+__pycache__/app.cpython-37.pyc
+__pycache__/currentWeather.cpython-37.pyc
+__pycache__/dailyForecast.cpython-37.pyc
+__pycache__/dayOf.cpython-37.pyc
+__pycache__/hourlyForecast.cpython-37.pyc
+__pycache__/keys2.cpython-37.pyc
+__pycache__/tideTimeKeeper.cpython-37.pyc
+__pycache__/timeConvert.cpython-37.pyc
+__pycache__/weatherScraper.cpython-37.pyc
+__pycache__/futureTides.cpython-37.pyc
