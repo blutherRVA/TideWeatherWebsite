@@ -3,6 +3,7 @@
 import time
 import datetime
 from timeConvert import dayInSeconds
+import json
 
 dayTimeTimeStamp = 1602907205
 capeCharlesTimeStamp = 1592057307 #Low Tide morning of 6/13/2020 in Cape Charles Harbor
@@ -54,6 +55,7 @@ def HighTideKeeper(tts):
             
             else:
                 print("error")
+
         return hTideDict
 
 
@@ -90,6 +92,7 @@ def HighTideKeeper(tts):
             
             else:
                 print("error")
+
 
         return hTideDict
 
@@ -136,15 +139,27 @@ def LowTideKeeper(tts):
         else:
             print("error")
 
-    return lTideDict
+    return lTideDict    
 
-def combineLowAndHigh(tts):
+'''def combineLowAndHigh(tts):
     h = HighTideKeeper(tts)
     l = LowTideKeeper(tts)
     newTideDict = h.update(l)
-    print(newTideDict)
+    #jsonStr= json.dumps(newTideDict, indent =4)
+    return newTideDict
+
+datL= {'a': '33', 'z': '909'}'''
 
 if __name__=="__main__":
-    #print(HighTideKeeper(piankatankTimeStamp))
-    #print(LowTideKeeper(piankatankTimeStamp))
-    combineLowAndHigh(piankatankTimeStamp)
+   print(HighTideKeeper(jamesTimeStamp))
+   print(LowTideKeeper(jamesTimeStamp))
+   print(combineLowAndHigh(jamesTimeStamp))
+   ''' 
+    with open('jTide.txt', 'w') as f1:
+        json.dump(datL, f1, indent=2)
+    with open('pTide.json', 'w') as f2:
+        json.dump(combineLowAndHigh(piankatankTimeStamp), f2)
+    with open('yTide.json', 'w') as f3:
+        json.dump(combineLowAndHigh(yorkTimeStamp), f3) 
+    '''
+
