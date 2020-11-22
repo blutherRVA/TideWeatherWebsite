@@ -51,7 +51,8 @@ def HighTideKeeper(tts):
             elif tideCount == 2 and dayTime >= 86400:
                 tideCount=1
                 dayTime = 0
-                continue 
+                hTideDict[tide]= 'null' #Adds null value for second tides that don't fall in 24 day
+                #continue 
             
             else:
                 print("error")
@@ -88,7 +89,8 @@ def HighTideKeeper(tts):
             elif tideCount == 2 and dayTime >= 86400:
                 tideCount=1
                 dayTime = 0
-                continue 
+                hTideDict[tide]= 'null' #Adds null value for second tides that don't fall in 24 day
+                #continue 
             
             else:
                 print("error")
@@ -134,32 +136,17 @@ def LowTideKeeper(tts):
         elif tideCount == 2 and dayTime >= 86400:
             tideCount=1
             dayTime = 0
-            continue 
+            lTideDict[tide]= 'null' #Adds null value for second tides that don't fall in 24 day
+            #continue 
         
         else:
             print("error")
 
     return lTideDict    
 
-'''def combineLowAndHigh(tts):
-    h = HighTideKeeper(tts)
-    l = LowTideKeeper(tts)
-    newTideDict = h.update(l)
-    #jsonStr= json.dumps(newTideDict, indent =4)
-    return newTideDict
-
-datL= {'a': '33', 'z': '909'}'''
 
 if __name__=="__main__":
    print(HighTideKeeper(jamesTimeStamp))
    print(LowTideKeeper(jamesTimeStamp))
-   print(combineLowAndHigh(jamesTimeStamp))
-   ''' 
-    with open('jTide.txt', 'w') as f1:
-        json.dump(datL, f1, indent=2)
-    with open('pTide.json', 'w') as f2:
-        json.dump(combineLowAndHigh(piankatankTimeStamp), f2)
-    with open('yTide.json', 'w') as f3:
-        json.dump(combineLowAndHigh(yorkTimeStamp), f3) 
-    '''
+
 
