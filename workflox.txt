@@ -1,0 +1,29 @@
+Workflow of Project:
+
+Set up html template pages using Bootstrap
+    \/
+Retreive Weather Information from OpenWeatherMap API
+    \/
+Write Weather info to JSON (so don't have to call the API each page click)
+    \/
+Interpret Weather Data to be easily readable (wind speed, direction, Fahrenheit)
+    \/
+Create Tide Clock Logic
+    \/
+Create Dictionaries with projected tides (Must accomadate days when there is only one high or low tide)
+    \/
+Write Tide Dictionaries to json files for temporary storage and retreival 
+    \/
+Pull from json tide files into a variable or directly into flask
+    \/
+reVerify tide clock logic output 
+    \/
+Connect all variables for the three locations into flask
+    \/
+Set up crontab to call tides at midnight, current weather hourly 
+    \/
+Verify API is only being called on the crontab periods
+    \/
+Verify flask app is running correctly
+    \/
+Launch web app on AWS Bean stalk (or Raspberry Pi)
