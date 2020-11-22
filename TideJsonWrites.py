@@ -1,7 +1,7 @@
 import time
 import datetime
 from timeConvert import dayInSeconds
-from futureTides import HighTideKeeper, LowTideKeeper, combineLowAndHigh
+from futureTides import HighTideKeeper, LowTideKeeper
 import json
 
 dayTimeTimeStamp = 1602907205
