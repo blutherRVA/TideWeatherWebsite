@@ -1,6 +1,6 @@
 #Main application file, connects templates with back end Python code using Flask
 from flask import Flask, render_template, request, url_for 
-from currentWeather import 
+import currentWeather 
 from dayOf import DayOf, TimeOf 
 from hourlyForecast import getHourWeather, getHourTemperature, getHourWind, getHourWindDir
 from dailyForecast import getDailyWeather, getDailyTemperature, getDailyWind, getDailyWindDir
@@ -164,7 +164,7 @@ def piankatank():
     dailyG1 = getDailyWeather(riverp, 6)
     dailyG2 = getDailyWind(riverp, 6)
     #Next slack tide 
-    nextTide = tide_time_keeper(jamesTimeStamp)
+    nextTide = tide_time_keeper(piankatankTimeStamp)
     #Future Tides
     d1h1 = pTideReads('d1', 'h1')
     d1h2 = pTideReads('d1', 'h2')
@@ -230,7 +230,7 @@ def york():
     hrlyD3 = getHourWind(rivery, 8)
     hrlyD4 = getHourWindDir(rivery, 8)
     #7 day forecast, letter/number represent cell position
-    dailyA1 = getDailyWeather(rivery 0)
+    dailyA1 = getDailyWeather(rivery, 0)
     dailyA2 = getDailyWind(rivery, 0)
     dailyB1 = getDailyWeather(rivery, 1)
     dailyB2 = getDailyWind(rivery, 1)
@@ -245,7 +245,7 @@ def york():
     dailyG1 = getDailyWeather(rivery, 6)
     dailyG2 = getDailyWind(rivery, 6)
     #Next slack tide 
-    nextTide = tide_time_keeper(jamesTimeStamp)
+    nextTide = tide_time_keeper(yorkTimeStamp)
     #Future Tides
     d1h1 = yTideReads('d1', 'h1')
     d1h2 = yTideReads('d1', 'h2')
