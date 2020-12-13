@@ -1,7 +1,7 @@
+#This file reads and interprets the OpenWeatherMap API data saved in the '...weatherWrites.py' files
 import json
 
-#James____________________________________________________________________________
-
+#James_________________________________________________________________________________________
 
 def getJamesCWeath():
     with open("jamesWeatherWrites.py", 'r') as file:
@@ -17,7 +17,7 @@ def getJamesCTemp():
         value = json.loads(file.read())
         current = value['current']
         temp_K = current['temp']
-        temp_F = int((temp_K - 273) + 32)         #convert Kelvin to Fahrenheit
+        temp_F = int((temp_K - 273) + 32)          #convert Kelvin to Fahrenheit
         return temp_F
 
 def getJamesCWind():
@@ -25,7 +25,7 @@ def getJamesCWind():
         value = json.loads(file.read())
         current = value['current']
         windSpeed_mps = current['wind_speed']
-        windSpeed_mph = int(windSpeed_mps * 2.24)      #convert meters per second to miles per hour
+        windSpeed_mph = int(windSpeed_mps * 2.24)                 #convert meters per second to miles per hour
         return windSpeed_mph
 
 def getJamesCWindDir():
@@ -33,7 +33,7 @@ def getJamesCWindDir():
         value = json.loads(file.read())
         current = value['current']
         windDir = current['wind_deg']
-        if 0 <= windDir < 45:
+        if 0 <= windDir < 45:                                   #Convert degrees to compass direction    
             return 'NNE'
         elif 45 <= windDir < 90:
             return 'ENE'
@@ -68,7 +68,7 @@ def getPiankCTemp():
         value = json.loads(file.read())
         current = value['current']
         temp_K = current['temp']
-        temp_F = int((temp_K - 273) + 32)             #convert Kelvin to Fahrenheit
+        temp_F = int((temp_K - 273) + 32)                   #convert Kelvin to Fahrenheit
         return temp_F
 
 def getPiankCWind():
@@ -76,15 +76,15 @@ def getPiankCWind():
         value = json.loads(file.read())
         current = value['current']
         windSpeed_mps = current['wind_speed']
-        windSpeed_mph = int(windSpeed_mps * 2.24)    #convert meters per second to miles per hour
+        windSpeed_mph = int(windSpeed_mps * 2.24)           #convert meters per second to miles per hour
         return windSpeed_mph
 
 def getPiankCWindDir():
     with open("piankWeatherWrites.py", 'r') as file:
         value = json.loads(file.read())
         current = value['current']
-        windDir = current['wind_deg']
-        if 0 <= windDir < 90:
+        windDir = current['wind_deg'] 
+        if 0 <= windDir < 90:                             #Convert degrees to compass direction                
             return 'NE'
         elif 90 <= windDir < 180:
             return 'SE'
@@ -111,7 +111,7 @@ def getYorkCTemp():
         value = json.loads(file.read())
         current = value['current']
         temp_K = current['temp']
-        temp_F = int((temp_K - 273) + 32)          #convert Kelvin to Fahrenheit
+        temp_F = int((temp_K - 273) + 32)                     #convert Kelvin to Fahrenheit
         return temp_F
 
 def getYorkCWind():
@@ -119,7 +119,7 @@ def getYorkCWind():
         value = json.loads(file.read())
         current = value['current']
         windSpeed_mps = current['wind_speed']
-        windSpeed_mph = int(windSpeed_mps * 2.24)       #convert meters per second to miles per hour
+        windSpeed_mph = int(windSpeed_mps * 2.24)               #convert meters per second to miles per hour
         return windSpeed_mph
 
 def getYorkCWindDir():
@@ -127,7 +127,7 @@ def getYorkCWindDir():
         value = json.loads(file.read())
         current = value['current']
         windDir = current['wind_deg']
-        if 0 <= windDir < 90:
+        if 0 <= windDir < 90:                           #Convert degrees to compass direction    
             return 'NE'
         elif 90 <= windDir < 180:
             return 'SE'

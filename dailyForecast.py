@@ -1,3 +1,5 @@
+
+
 import json
 
 riverj = "jamesWeatherWrites.py"
@@ -23,7 +25,7 @@ def getDailyTemperature(river, dayInp):
         day = daily[dayInp]
         dayTemp = day['temp']
         temp_K = dayTemp['day']
-        temp_F = int((temp_K - 273) + 32)         #convert Kelvin to Fahrenheit
+        temp_F = int((temp_K - 273) + 32)              #convert Kelvin to Fahrenheit
         return temp_F
 
 def getDailyWind(river, dayInp):
@@ -41,7 +43,7 @@ def getDailyWindDir(river, dayInp):
         daily = value['daily']
         day = daily[dayInp]
         windDir = day['wind_deg']
-        if 0 <= windDir < 90:
+        if 0 <= windDir < 90:                           #Convert degrees to compass direction    
             return 'NE'
         elif 90 <= windDir < 180:
             return 'SE'
