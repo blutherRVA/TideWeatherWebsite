@@ -57,8 +57,8 @@
                 <br>
                 <br>
                 <h3>Tide</h3>
-                <p>Next High: 3 Hours 12 Minutes</p>
-                <p> Water Clarity: Clear</p>
+                <p><strong>Next Slack Tide:</strong><i> {{nextTide}}</i></p>
+                
                 
               </div><!-- /.col-lg-4 -->
               <div class="col-lg-4">
@@ -66,8 +66,8 @@
                 <br>
                 <br>
                 <h3>Weather</h3>
-                <p> Current Weather: Partly Cloudy</p>
-                <p> Current Temperature: 78 F</p>
+                <p><strong> Current Weather:</strong><i> {{weather}}</i></p>
+                <p><strong> Current Temperature:</strong><i> {{temperature}} F </i></p>
                 
               </div><!-- /.col-lg-4 -->
               <div class="col-lg-4">
@@ -75,77 +75,79 @@
                 <br> 
                 <br>
                 <h3>Wind</h3>
-                <p> Current Wind: 12 mph</p>
-                <p> Wind Direction: ENE </p>
+                <p><strong>Current Wind:</strong> <i> {{windSp}} mph </i></p>
+                <p><strong> Wind Direction:</strong><i> {{windDir}} </i></p>
               </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
         </div>
         
         <hr class="featurette-divider">
-        <div class="container">
-            <div class="row" id="head">
-                <h2> Daily Forecast </h2>
-            </div>
-        </div> 
-        <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="card" id="graph">
-                    <div class="table-responsive">
-                        <table class="table">
-                                <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">Hour</th>
-                                    <th scope="col">{{time2}}</th>
-                                    <th scope="col">{{time4}}</th>
-                                    <th scope="col">{{time6}}</th>
-                                    <th scope="col">{{time8}}</th>
-                                
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">Weather</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+       <div class="container">
+           <div class="row" id="head">
+               <h2> Today's Hourly Weather </h2>
+           </div>
+       </div> 
+       <div class="container">
+           <div class="row">
+             <div class="col-12">
+               <div class="card" id="graph">
+                   <div class="table-responsive">
+                       <table class="table">
+                               <thead class="thead-light">
+                               <tr>
+                                   <th scope="col">Hour</th>
+                                   <th scope="col">{{time2}}</th>
+                                   <th scope="col">{{time4}}</th>
+                                   <th scope="col">{{time6}}</th>
+                                   <th scope="col">{{time8}}</th>
+                               
+                               </tr>
+                               </thead>
+                               <tbody>
+                               <tr>
+                                   <th scope="row">Weather</th>
+                                   <td>{{hrlyA1}}</td>
+                                   <td>{{hrlyB1}}</td>
+                                   <td>{{hrlyC1}}</td>
+                                   <td>{{hrlyD1}}</td>
+       
+                               </tr>
+                               <tr>
+                                   <th scope="row">Temperature</th>
+                                   <td>{{hrlyA2}} F</td>
+                                   <td>{{hrlyB2}} F</td>
+                                   <td>{{hrlyC2}} F</td>
+                                   <td>{{hrlyD2}} F</td>
+                               </tr>
+                               <tr>
+                                   <th scope="row">Wind</th>
+                                   <td>{{hrlyA3}} mph</td>
+                                   <td>{{hrlyB3}} mph</td>
+                                   <td>{{hrlyC3}} mph </td>
+                                   <td>{{hrlyD3}} mph</td>
+                               </tr>
+                               <tr>
+                                   <th scope="row">Wind Direction</th>
+                                   <td>{{hrlyA4}}</td>
+                                   <td>{{hrlyB4}}</td>
+                                   <td>{{hrlyC4}}</td>
+                                   <td>{{hrlyD4}}</td>
+                               </tr>
+                               </tbody>
+                       </table>
+                   </div>   
+               </div>
+             </div>
+           <!-- START THE FEATURETTES -->
+       <br>
+       <br>
+       <hr class="featurette-divider">
+            
         
-                                </tr>
-                                <tr>
-                                    <th scope="row">Temperature</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Wind</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Wind Direction</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                </tbody>
-                        </table>
-                    </div>   
-                </div>
-              </div>
-            <!-- START THE FEATURETTES -->
-        <br>
-        <br>
-
         <hr class="featurette-divider">
         <div class="container">
             <div class="row" id="head">
-                <h2> 7 Day Forecast </h2>
+                <h2> 7 Day Weather & Tide Forecast </h2>
             </div>
         </div> 
         <div class="container">
@@ -164,45 +166,45 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row">{{day0}}</th>
+                                    <td>{{dailyA1}}</td>
+                                    <td>{{dailyA2}} mph</td>
         
                                 </tr>
                                 <tr>
-                                    <th scope="row">2</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row">{{day1}}</th>
+                                    <td>{{dailyB1}}</td>
+                                    <td>{{dailyB2}} mph</td>
                                     
                                 </tr>
                                 <tr>
-                                    <th scope="row">3</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row">{{day2}}</th>
+                                    <td>{{dailyC1}}</td>
+                                    <td>{{dailyC2}} mph</td>
                                     
                                 </tr>
                                 <tr>
-                                    <th scope="row">4</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row">{{day3}}</th>
+                                    <td>{{dailyD1}}</td>
+                                    <td>{{dailyD2}} mph</td>
                                     
                                 </tr>
                                 <tr>
-                                    <th scope="row">5</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row">{{day4}}</th>
+                                    <td>{{dailyE1}}</td>
+                                    <td>{{dailyE2}} mph</td>
                                     
                                 </tr>
                                 <tr>
-                                    <th scope="row">6</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row">{{day5}}</th>
+                                    <td>{{dailyG1}}</td>
+                                    <td>{{dailyG2}} mph</td>
                                     
                                 </tr>
                                 <tr>
-                                    <th scope="row">7</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row">{{day6}}</th>
+                                    <td>{{dailyF1}}</td>
+                                    <td>{{dailyF2}} mph</td>
                                     
                                 </tr>
                                 </tbody>
@@ -224,55 +226,55 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                      <th scope="row">{{day0}}</th>
-                                      <td>{{d1l1}}</td>
-                                      <td>{{d1h1}}</td>
-                                      <td>{{d1l2}}</td>
-                                      <td>{{d1h2}}</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">{{day1}}</th>
-                                      <td>{{d2l1}}</td>
-                                      <td>{{d2h1}}</td>
-                                      <td>{{d2l2}}</td>
-                                      <td>{{d2h2}}</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">{{day2}}</th>
-                                      <td>{{d3l1}}</td>
-                                      <td>{{d3h1}}</td>
-                                      <td>{{d3l2}}</td>
-                                      <td>{{d3h2}}</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">{{day3}}</th>
-                                      <td>{{d4l1}}</td>
-                                      <td>{{d4h1}}</td>
-                                      <td>{{d4l2}}</td>
-                                      <td>{{d4h2}}</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">{{day4}}</th>
-                                      <td>{{d5l1}}</td>
-                                      <td>{{d5h1}}</td>
-                                      <td>{{d5l2}}</td>
-                                      <td>{{d5h2}}</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">{{day5}}</th>
-                                      <td>{{d6l1}}</td>
-                                      <td>{{d6h1}}</td>
-                                      <td>{{d6l2}}</td>
-                                      <td>{{d6h2}}</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">{{day6}}</th>
-                                      <td>{{d7l1}}</td>
-                                      <td>{{d7h1}}</td>
-                                      <td>{{d7l2}}</td>
-                                      <td>{{d7h2}}</td>
-                                  </tr>
+                                <tr>
+                                    <th scope="row">{{day0}}</th>
+                                    <td>{{d1l1}}</td>
+                                    <td>{{d1h1}}</td>
+                                    <td>{{d1l2}}</td>
+                                    <td>{{d1h2}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">{{day1}}</th>
+                                    <td>{{d2l1}}</td>
+                                    <td>{{d2h1}}</td>
+                                    <td>{{d2l2}}</td>
+                                    <td>{{d2h2}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">{{day2}}</th>
+                                    <td>{{d3l1}}</td>
+                                    <td>{{d3h1}}</td>
+                                    <td>{{d3l2}}</td>
+                                    <td>{{d3h2}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">{{day3}}</th>
+                                    <td>{{d4l1}}</td>
+                                    <td>{{d4h1}}</td>
+                                    <td>{{d4l2}}</td>
+                                    <td>{{d4h2}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">{{day4}}</th>
+                                    <td>{{d5l1}}</td>
+                                    <td>{{d5h1}}</td>
+                                    <td>{{d5l2}}</td>
+                                    <td>{{d5h2}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">{{day5}}</th>
+                                    <td>{{d6l1}}</td>
+                                    <td>{{d6h1}}</td>
+                                    <td>{{d6l2}}</td>
+                                    <td>{{d6h2}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">{{day6}}</th>
+                                    <td>{{d7l1}}</td>
+                                    <td>{{d7h1}}</td>
+                                    <td>{{d7l2}}</td>
+                                    <td>{{d7h2}}</td>
+                                </tr>
                                 </tbody>
                         </table>
                     </div>   
