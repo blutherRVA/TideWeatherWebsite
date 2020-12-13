@@ -15,3 +15,4 @@ __pycache__/TideJsonReads.cpython-37.pyc
 flaskr/__pycache__/futureTides.cpython-37.pyc
 flaskr/__pycache__/timeConvert.cpython-37.pyc
 .DS_Store
+flaskr/.DS_Store
