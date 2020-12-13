@@ -285,5 +285,5 @@ def york():
         d7h1=d7h1, d7h2=d7h2, d1l1=d1l1, d1l2=d1l2, d2l1=d2l1, d2l2=d2l2, d3l1=d3l1, d3l2=d3l2, d4l1=d4l1, d4l2=d4l2, d5l1=d5l1, d5l2=d5l2, d6l1=d6l1, d6l2=d6l2,
         d7l1=d7l1, d7l2=d7l2)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
+    
