@@ -1,7 +1,8 @@
+#This file is simply in case I need to make new time stamps
 import time
 import datetime
 
-
+#Time deltas off Cape Charles tide Time Stamp
 tidal_james_delta = 360
 piankatank_delta = 21480
 york_delta = 28800

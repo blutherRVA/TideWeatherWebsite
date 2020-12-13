@@ -28,7 +28,7 @@ def yTideReads(d,t): #days and tides should be in string format to be read corre
 
 
 if __name__ == ('__main__'):
-    print(jTideReads('d1', 'h2'))
-    print(jTideReads('d3', 'h1'))
-    print(jTideReads('d6', 'h2'))
+    print(jTideReads('d1', 'l1'))
+    print(pTideReads('d3', 'h1'))
+    print(yTideReads('d6', 'h2'))
 
